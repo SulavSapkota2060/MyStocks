@@ -1,0 +1,21 @@
+.dashboard {
+}
+
+.topBar {
+  padding: 20px;
+  font-family: "Montserrat";
+  background-color: white;
+  height: 20vh;
+  box-shadow: 0px 0px 20px #f4f4fc;
+  border-left: 2px solid rgb(130, 130, 243);
+}
+
+.topBarItem {
+}
+
+@media only screen and (max-width: 1000px) {
+  .dashboard {
+    margin-left: 2vw;
+    width: 95vw;
+  }
+}

@@ -1,0 +1,30 @@
+.table {
+  background-color: white;
+  font-family: "Open Sans";
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0px 0px 20px #f4f4fc;
+  border-left: 2px solid rgb(130, 130, 243);
+}
+.table .header {
+  padding: 20px;
+}
+table {
+  font-size: 20px;
+  table-layout: auto !important;
+  border-collapse: collapse;
+  border-bottom-color: #ccc;
+}
+
+table.portfolio {
+  width: 78vw;
+}
+@media only screen and (max-width: 1000px) {
+  .dashboard {
+    margin-left: 2vw;
+    width: 95vw;
+  }
+  table.portfolio {
+    width: 90vw;
+  }
+}

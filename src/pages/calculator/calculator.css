@@ -1,0 +1,66 @@
+.optionButton {
+  border-radius: 10%;
+  height: 80px;
+  width: 80px;
+}
+.calc {
+  width: 20vw;
+  margin: 20px 10vw;
+  background-color: #f4f4fc;
+  box-shadow: 0px 0px 200px #f4f4fc;
+  padding: 20px;
+}
+.calcButton {
+  height: 83px;
+  width: 100%;
+  color: #969db4;
+  border: none;
+}
+
+.calcbuttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-size: 20px;
+}
+.extra {
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column: 4;
+  height: 100%;
+}
+.symbols {
+  width: 50%;
+}
+
+.activeButton {
+  background-color: rgb(130, 130, 243);
+  color: white;
+}
+
+.results {
+  background-color: rgb(130, 130, 243);
+  color: white;
+  box-shadow: 0px 0px 20px #fff;
+  padding: 10px;
+  font-family: "Proza Libre", sans-serif;
+}
+
+.results .sellData,
+.buyData {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.other {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.other h5,
+.symbols {
+  color: #969db4;
+}
+.other input {
+  width: 100%;
+}
