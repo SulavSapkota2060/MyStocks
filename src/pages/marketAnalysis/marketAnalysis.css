@@ -1,0 +1,29 @@
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.marketAnalysis .options {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 5fr 1fr 1fr 1fr;
+}
+.marketAnalysis .options button {
+  height: 60px;
+}
+
+.loader {
+  width: 1vw;
+  height: 1vw;
+  margin: auto;
+}
+
+.marketAnalysis .filter-button {
+  padding: 10px;
+  width: 6vw;
+  margin: 1px;
+}
+
+.marketAnalysis .filterButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

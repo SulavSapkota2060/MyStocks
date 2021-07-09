@@ -1,0 +1,25 @@
+.alert {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  width: 50vw;
+  margin: auto;
+  display: block;
+}
+
+.alert .success {
+  background-color: #48be85;
+}
+
+.alert .error {
+  background-color: rgb(252, 118, 164);
+}
+
+.alert .alert-message {
+  text-align: center;
+  width: 40vw;
+  padding: 20px;
+  border-radius: 10px;
+}
+.alert .cross_icon {
+  cursor: pointer;
+}

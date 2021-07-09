@@ -1,0 +1,15 @@
+.sellTradeModal .box {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-family: "Proza Libre";
+  color: rgb(99, 111, 140);
+}
+.sellTradeModal {
+  box-shadow: 1px 1px 1500px rgb(252, 118, 164);
+  border-top: 4px solid rgb(252, 118, 164);
+  padding: 20px;
+  background-color: white;
+  width: 20vw;
+  position: fixed;
+  left: 45vw;
+}

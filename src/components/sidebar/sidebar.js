@@ -16,9 +16,17 @@ const Sidebar = () => {
               &nbsp; Dashboard
             </li>
           </Link>
-          <li className="listItem">
-            <i className="fa fa-line-chart"></i>&nbsp; Market Analysis
-          </li>
+          <Link to="/myTradeData">
+            <li className="listItem">
+              <i className="fa fa-line-chart"></i>
+              &nbsp; My Trade History
+            </li>
+          </Link>
+          <Link to="/marketAnalysis">
+            <li className="listItem">
+              <i className="fa fa-pie-chart"></i>&nbsp; Market Analysis
+            </li>
+          </Link>
           <Link to="/calculator">
             <li className="listItem">
               <i className="fa fa-calculator"></i>&nbsp; Calculator

@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./dashboard.css";
 import Table from "../../components/table/table";
+import axios from "axios";
+import SellTradeModal from "../../components/sellTradeModal/SellTradeModal";
 
 const Dashboard = () => {
+  const [tradeData, changeTradeData] = useState([]);
+  const [showSellModal, changeShowModal] = useState("false");
+
   const [dashData, changeDashdata] = useState({
     portfolio: 20000,
     shares: 30000,
     worth: 300000,
     profit: 40000,
   });
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/user/user_stocks?user_id=1")
+      .then((res) => changeTradeData(res.data));
+  }, []);
   return (
     <div className="customContainer dashboard ">
       <div className="topBar">
@@ -33,7 +43,19 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <Table />
+      <SellTradeModal
+        sellModal={() => changeShowModal("false")}
+        display={showSellModal}
+      />
+      <Table
+        type="dashboard"
+        data={tradeData}
+        sellModal={(symbol) =>
+          showSellModal === "true"
+            ? changeShowModal("false")
+            : changeShowModal("true")
+        }
+      />
     </div>
   );
 };

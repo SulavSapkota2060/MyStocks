@@ -3,6 +3,7 @@ import "./calculator.css";
 import Symbols from "../../utils/symbols";
 
 const Calculator = () => {
+  const [calcInput, changeCalcInput] = useState("");
   const [tradeType, changeTradeType] = useState("Buy");
   const [buyData, changeBuy] = useState({
     symbol: "",
@@ -15,14 +16,14 @@ const Calculator = () => {
   }, [buyData]);
 
   const commission = useMemo(() => {
-    return (0.5 / 100) * value;
+    return ((0.5 / 100) * value).toFixed(2);
   }, [value]);
 
   const total = useMemo(() => {
     if (tradeType === "Buy") {
-      return value + commission;
+      return value + Number(commission);
     } else if (tradeType === "Sell") {
-      return value - commission;
+      return value - Number(commission);
     }
   }, [value, commission, tradeType]);
 
@@ -31,7 +32,7 @@ const Calculator = () => {
   }, [buyData, value]);
 
   const tax = useMemo(() => {
-    return (5 / 100) * profit;
+    return ((5 / 100) * profit).toFixed(2);
   }, [profit]);
 
   const netProfit = useMemo(() => {
@@ -68,6 +69,14 @@ const Calculator = () => {
         buyPrice: Number(document.querySelector(".buyingPriceValue").value),
         quantity: Number(document.querySelector(".quantityValue").value),
       });
+    }
+  };
+
+  const updateCalc = (e) => {
+    if (calcInput === "0") {
+      changeCalcInput(e.target.innerHTML);
+    } else {
+      changeCalcInput(calcInput + e.target.innerHTML);
     }
   };
 
@@ -125,7 +134,7 @@ const Calculator = () => {
 
         <div className="symbols mt-5">
           <h5>Select Symbol:</h5>
-          <Symbols />
+          <Symbols type="Numeric" />
         </div>
         <div className="other">
           <div className="quantity">
@@ -162,29 +171,71 @@ const Calculator = () => {
       <div className="col-md-6">
         <div className="calc">
           <div className="row">
-            <input type="text" />
+            <p id="calcInput">{calcInput}</p>
           </div>
 
           <div className="calcbuttons mt-4">
-            <button className="calcButton">C</button>
-            <button className="calcButton">%</button>
-            <button className="calcButton">/</button>
-            <button className="calcButton">x</button>
-            <button className="calcButton">1</button>
-            <button className="calcButton">2</button>
-            <button className="calcButton">3</button>
-            <button className="calcButton">+</button>
-            <button className="calcButton">4</button>
-            <button className="calcButton">5</button>
-            <button className="calcButton">6</button>
-            <button className="calcButton">-</button>
-            <button className="calcButton">7</button>
-            <button className="calcButton">8</button>
-            <button className="calcButton">9</button>
-            <button className="calcButton">.</button>
-            <button className="calcButton">0</button>
-            <button className="calcButton">.</button>
-            <button className="calcButton extra">=</button>
+            <button onClick={() => changeCalcInput("")} className="calcButton">
+              C
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              %
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              /
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              *
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              1
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              2
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              3
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              +
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              4
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              5
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              6
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              -
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              7
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              8
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              9
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              .
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              0
+            </button>
+            <button onClick={(e) => updateCalc(e)} className="calcButton">
+              .
+            </button>
+            <button
+              // eslint-disable-next-line
+              onClick={() => changeCalcInput(String(eval(calcInput)))}
+              className="calcButton extra"
+            >
+              =
+            </button>
           </div>
         </div>
       </div>

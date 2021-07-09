@@ -1,0 +1,23 @@
+.loader {
+  height: 50px;
+  width: 50px;
+  border: 1px solid rgb(130, 130, 243);
+  border-radius: 50%;
+  border-top: none;
+  animation: rotate 0.3s linear 0s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}

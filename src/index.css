@@ -1,5 +1,4 @@
 body {
-  font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
   background-color: #fafafe;
 }
@@ -19,14 +18,23 @@ a {
 button {
   background: none;
   border: 1px solid rgb(130, 130, 243);
-  padding: 20px;
-  min-width: 90px;
   font-family: "Open Sans";
+  color: rgb(130, 130, 243);
   letter-spacing: 1px;
-  margin: 2px;
 }
 
-button:hover {
+button.danger {
+  color: rgb(252, 118, 164);
+  border: 1px solid rgb(252, 118, 164);
+}
+button.danger:hover {
+  background-color: rgb(252, 118, 164);
+  color: white;
+  transition: 0.4s;
+}
+
+button:hover,
+.selected {
   background-color: rgb(130, 130, 243);
   color: white;
   transition: 0.4s;
@@ -40,6 +48,8 @@ input {
   background-color: #ecebf6;
   border: none;
   min-height: 60px;
+  font-size: 17px;
+  width: 90%;
 }
 input:focus {
   outline: none;

@@ -1,19 +1,36 @@
 .table {
-  background-color: white;
-  font-family: "Open Sans";
   margin: 50px auto;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0px 0px 20px #f4f4fc;
+  background-color: rgb(255, 255, 255);
   border-left: 2px solid rgb(130, 130, 243);
+  color: rgb(99, 111, 140);
+  font-weight: 500;
+  font-family: "Proza Libre";
 }
 .table .header {
   padding: 20px;
+  font-weight: 800;
+}
+.table .tableTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.table .tableTop input {
+  border-left: 1px solid rgb(130, 130, 243);
 }
 table {
-  font-size: 20px;
+  font-size: 18px;
   table-layout: auto !important;
   border-collapse: collapse;
-  border-bottom-color: #ccc;
+  border-bottom-color: rgb(233, 236, 239);
+}
+
+table tr th {
+  background-color: #fafafe;
+}
+table tr {
+  border-bottom:1px solid rgb(233, 236, 239);
 }
 
 table.portfolio {
