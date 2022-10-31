@@ -20,7 +20,7 @@ const MarketAnalysis = () => {
     changeLoading(true);
     const company = document.querySelector("#StockSymbol_Select").value;
     axios
-      .get(`http://localhost:8000/historic_beta/${company}?range=${duration}`)
+      .get(`http://localhost:8000/historic_data/${company}?range=${duration}`)
       .then((res) => {
         if (res.data.length === 0) {
           changeAlert(
